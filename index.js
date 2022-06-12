@@ -12,23 +12,13 @@ const tutorials = [
 ];
 
 function titleCased() {
-  const newTutorials = [];
-  for(const bit of tutorials) {
-    const array = bit.split(" ");
-    for(let n = 0; n < array.length; n++){
-      array[n] = array[n].charAt(0).toUpperCase() + array[n].slice(1)
-    }
-    const array2 = array.join(" ");
-    newTutorials.push(array2)
-  }
-  tutorials.map(bit => {
-    const array = bit.split(" ");
-    for(let n = 0; n < array.length; n++){
-      array[n] = array[n].charAt(0).toUpperCase() + array[n].slice(1)
-    }
-    const array2 = array.join(" ");
-    newTutorials.push(array2)
-  })
-  return newTutorials;
-}
-console.log(titleCased())
+  return tutorials.map((array) => {
+    const newTutorials = array.split(" ");
+    const upperCasedNewTutorials = newTutorials.map(
+      (newTutorials) => newTutorials.charAt(0).toUpperCase() + newTutorials.slice(1)
+    );
+    const response = upperCasedNewTutorials.join(" ");
+    return response;
+  });
+};
+  
